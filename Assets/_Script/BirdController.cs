@@ -40,7 +40,7 @@ public class BirdController : MonoBehaviour
     }
     void Update()
     {
-        bird_rb2d.gravityScale = 1.1f;
+        bird_rb2d.gravityScale = 1.2f;
         PlayBird();
         currentScoreText.text = currentScore.ToString();
     }
@@ -76,10 +76,7 @@ public class BirdController : MonoBehaviour
     {
         currentScore++;
         Debug.Log("Score now: " + currentScore);
-
-        
         Instantiate(Point_fly,new Vector2(this.transform.position.x, this.transform.position.y + 0.5f), Quaternion.identity);
-
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -89,6 +86,7 @@ public class BirdController : MonoBehaviour
     {
         checkDie = true;
         bird_ani.Play("die");
+        bird_rb2d.velocity = this.transform.position;
         yield return new WaitForSeconds(0.8f);
         Time.timeScale = 0f;
         GameOver();
