@@ -13,6 +13,6 @@ public class Point_Fly : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Destroy(this.gameObject,1f);
+        Destroy(this.gameObject,0.5f);
     }
 }

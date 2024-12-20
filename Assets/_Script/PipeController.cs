@@ -23,8 +23,4 @@ public class PipeController : MonoBehaviour
         Instantiate(prefab,new Vector2(transform.position.x,ramdomPipe), Quaternion.identity,transform);
 
     }
-    private void OnDrawGizmosSelected()
-    {
-
-    }
 }

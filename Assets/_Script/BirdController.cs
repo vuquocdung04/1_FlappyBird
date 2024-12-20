@@ -78,9 +78,7 @@ public class BirdController : MonoBehaviour
         Debug.Log("Score now: " + currentScore);
 
         
-        var turn =  Instantiate(Point_fly,new Vector2(this.transform.position.x, this.transform.position.y + 0.5f), Quaternion.identity);
-        turn.transform.parent = pointCanvas.transform;
-        turn.transform.localScale = new Vector3(1, 1, 1);
+        Instantiate(Point_fly,new Vector2(this.transform.position.x, this.transform.position.y + 0.5f), Quaternion.identity);
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
