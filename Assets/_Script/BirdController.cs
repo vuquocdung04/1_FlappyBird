@@ -62,10 +62,17 @@ public class BirdController : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && checkDie == false)
         {
             bird_rb2d.velocity = Vector2.up * speed;
-            
+            StartCoroutine(AnimScale());
         }
     }
+    IEnumerator AnimScale()
+    {
+        float ramdomScale = Random.Range(1.1f,1.3f);
 
+        bird_tran.localScale = new Vector3(ramdomScale,ramdomScale,1.2f);
+        yield return new WaitForSeconds(0.15f);
+        bird_tran.localScale = new Vector3(1,1,1);
+    }
     public void GameOver()
     {
         gameOver.SetActive(true);
